@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>HTML/Alpine/Tailwind Starter</title>
+    <meta name="description" content="HTML/Alpine/Tailwind starter files" />
+    <meta name="author" content="John William Davis" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--  The following is from Josh Comeau-->
+    <meta property="og:title" content="Your Page Title" />
+    <meta property="og:description" content="Brief description" />
+    <meta property="og:image" content="/some-image.png" />
+    <meta property="og:url" content="/this-page.html" />
+    <meta property="og:site_name" content="Your Site Name" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image:alt" content="image description" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- These need to be filled in per project  -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div
+      class="flex flex-col items-center w-screen h-screen text-white bg-blue-800 md:justify-center"
+    >
+      <div class="flex flex-col items-center justify-center p-6">
+        <h1 class="w-full text-3xl text-center">
+          My Plain <code class="text-yellow-200">`html`</code> tailwind starter
+        </h1>
+        <p class="mt-4 text-2xl">Here is a sample paragraph...</p>
+        <p class="my-4">Here is anothe line</p>
+        <h1 x-data="{ message: 'I ❤️ Alpine' }" x-text="message"></h1>
+      </div>
+      <div class="text-white" x-data="{ open: false }">
+        <button class="px-3 py-2 text-red-800 bg-yellow-200 rounded" @click="open = ! open">
+          Toggle
+        </button>
+
+        <div x-show="open" @click.outside="open = false"><p class="mt-3">Contents...</p></div>
+      </div>
+      <h2 class="mt-4 text-xl">
+        GitHub repo
+        <a
+          class="text-yellow-200 hover:underline"
+          href="https://github.com/papadavis47/html-alpine-tailwind-starter"
+          target="_blank"
+          rel="noreferrer"
+          >here </a
+        >🧑‍💻
+      </h2>
+    </div>
+  </body>
+</html>
